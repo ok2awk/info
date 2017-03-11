@@ -1,0 +1,21 @@
+Doc=$HOME/opt/ok/docs
+Web=$PWD
+cd ../src
+
+for a in *[^1-9].ok; do
+  b=${a%.*}
+  c=$Doc/$b.md
+  if [ -f "$c" ]; then
+    d=$Web/$b.md
+    if [ "$c" -nt "$d" ]; then
+      echo cp $c $d
+      cp $c $d
+    fi
+  fi
+done
+
+echo cd $Web
+cd $Web
+git add *
+
+
