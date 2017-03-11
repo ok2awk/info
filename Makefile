@@ -1,4 +1,4 @@
-typo:  ready 
+typo:  ready files 
 	@- git status
 	@- git commit -am "saving"
 	@- git push origin master
@@ -21,9 +21,5 @@ timm:
 	@git config --global user.name "Tim Menzies"
 	@git config --global user.email tim.menzies@gmail.com
 
-
-FILES_OUT = $($(shell ../src/*[^0-1].ok)FILES_IN:=x)
-
 files:
-	cd ../src; \
-	for ffor f in $(HOME)/opt/ok/docs/*; do if [ $
+	bash update
